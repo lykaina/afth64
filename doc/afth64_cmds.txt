@@ -1,0 +1,64 @@
+ 	pass
+!	self.rcore_not_tl()	if tl==0 tl=1; else tl=0
+"	pass
+#	pass
+$	pass
+%	self.rmath_t_tl_mod()	t=t%tl
+&	self.rcore_and_tl()	if (tl!=0 and t!=0) tl=1; else tl=0
+'	pass
+(	self.rxtio_t_in_hex()	input t from hex
+)	self.rxtio_t_out_hex()	output t as hex
+*	self.rmath_t_tl_mul()	t=t*tl
++	self.rmath_t_tl_add()	t=t+tl
+,	self.rxtio_t_in_char()	input t from char
+-	self.rcore_t_flipsign()	t=t*-1
+.	self.rxtio_t_out_char()	output t as char
+/	self.rmath_t_tl_idiv()	t=t//tl
+0	self.rcore_t_x16_inc(0)	t=t*16
+1	self.rcore_t_x16_inc(1)	t=t*16+1
+2	self.rcore_t_x16_inc(2)	t=t*16+2
+3	self.rcore_t_x16_inc(3)	t=t*16+3
+4	self.rcore_t_x16_inc(4)	t=t*16+4
+5	self.rcore_t_x16_inc(5)	t=t*16+5
+6	self.rcore_t_x16_inc(6)	t=t*16+6
+7	self.rcore_t_x16_inc(7)	t=t*16+7
+8	self.rcore_t_x16_inc(8)	t=t*16+8
+9	self.rcore_t_x16_inc(9)	t=t*16+9
+:	self.rcore_t_abs()	t=abs(t)
+;	self.rcore_or_tl()	if (tl==0 and t==0) tl=0; else tl=1
+<	self.rcore_t_shl()	t=t*2
+=	pass
+>	self.rcore_t_shr()	t=t//2
+?	pass
+@	pass
+A	self.rcore_t_x16_inc(10)	t=t*16+10
+B	self.rcore_t_x16_inc(11)	t=t*16+11
+C	self.rcore_t_x16_inc(12)	t=t*16+12
+D	self.rcore_t_x16_inc(13)	t=t*16+13
+E	self.rcore_t_x16_inc(14)	t=t*16+14
+F	self.rcore_t_x16_inc(15)	t=t*16+15
+G	self.rstac_s_t()	stack.push(t)
+H	self.rstac_t_s()	t=stack.pop()
+I	self.rswap_t_i()	swap t,ti
+J	self.rswap_t_j()	swap t,tj
+K	self.rswap_t_k()	swap t,tk
+L	self.rswap_t_l()	swap t,tl
+M	self.rstac_s2_t()	stack2.push(t)
+N	self.rstac_t_s2()	t=stack2.pop()
+O	self.rstac_t_len_s()	t=len(stack)
+P	self.rstac_t_len_s2()	t=len(stack2)
+Q	self.rcore_quit()	exit(t)
+R	self.rcore_quit_iflz()	if tl == 0 exit(t)
+S	self.rcore_jnz_r()	jump t lines if tl != 0
+T	self.rcore_zte()	if t==0 tl=1; else tl=0
+U	self.rcore_ztg()	if t>0 tl=1; else tl=0
+V	self.rcore_t_dec()	t=t-1
+W	self.rmath_t_tl_pow()	t=floor(pow(t,tl))
+X	self.rcore_xor_tl()	if (tl==0 and t==0) tl=0; elif (tl!=0 and t!=0) tl=0; else tl=1
+Y	self.rmath_t_tl_log()	t=floor(log(t,tl))
+Z	self.rxtra_t_randint()	t=randint(t)
+[	self.rxtio_t_in_int()	input t from int
+\	pass
+]	self.rxtio_t_out_int()	output t as int
+^	self.rcore_t_inc()	t=t+1
+_	self.rcore_t_zero()	t=0

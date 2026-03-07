@@ -1,0 +1,6 @@
+LF
+|Hello, World!
+{_2G} JSIG
+{_2G} JUMP
+OC {_2G} NEG JUMP
+END

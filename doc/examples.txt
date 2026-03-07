@@ -1,0 +1,14 @@
+==> examples/add2.a64 <==
+ID ID + OD END
+
+==> examples/echo.a64 <==
+IC DUP OC LF - L_NZ
+END
+
+==> examples/helloworld.a64 <==
+LF
+|Hello, World!
+{_2G} JSIG
+{_2G} JUMP
+OC {_2G} NEG JUMP
+END
