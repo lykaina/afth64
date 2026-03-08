@@ -1,5 +1,5 @@
 '''
-Afth64 Interpreter v0.7-alpha0 Library
+Afth64 Interpreter v0.8.1 Library
 
 Copyright (c) 2025-2026 Sara Berman
 
@@ -488,15 +488,21 @@ class AFTH64:
                     runl=self.run_char(cmdch.encode())
                     self.buf_out()
         elif ord(cmp[0]) >= 33 and ord(cmp[0]) <= 95:
-            wn=self.varnum_encode(cmp)
+            wn=self.varnum_encode((cmp.split('|'))[0])
+            wni=0
+            wnj=0
+            if len(cmp.split('|')) > 1:
+                wni=int((cmp.split('|'))[1])
+                if len(cmp.split('|')) > 2:
+                    wnj=int((cmp.split('|'))[2])
             wnum=0
             for i in range(len(self.wordlist)):
                 if self.wordlist[i][0]==wn:
                     wnum=i
             #print('DEBUG CW {{'+self.wordlist[wnum][1]+'}}')
-            for lc in range(len(self.wordlist[wnum][1])):
+            for lc in range(len(((self.wordlist[wnum][1].split('}'))[wnj].split('|'))[wni])):
                 if self.j == False:
-                    cmdch = self.wordlist[wnum][1][lc]
+                    cmdch = (((self.wordlist[wnum][1].split('}'))[wnj].split('|'))[wni])[lc]
                     #print('DEBUG C {{{'+cmdch+'}}}')
                     runw=runw+self.run_char(cmdch.encode())
                     self.buf_out()
